@@ -1,0 +1,5 @@
+/* 我们用未来的css特性是不需要经过less scss预处理器进行编译， 我们交给postcss处理 */
+
+:root{
+    --globalColor: lightblue;
+  }
