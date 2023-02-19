@@ -6,3 +6,11 @@ import { name, age } from '@assets/json/index.json'
 
 // 摇树优化
 console.log(name, age) //在其他的构建工具里json文件会以字符串形式存在
+
+fetch('/api/users', {
+  method: 'post'
+}).then(res => {
+  console.log(res)
+}).catch(err => {
+  console.log(err)
+})

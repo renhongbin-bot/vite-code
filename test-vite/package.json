@@ -17,8 +17,11 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
+    "mockjs": "^1.1.0",
     "postcss-preset-env": "^8.0.1",
     "vite": "^4.1.1",
-    "vite-aliases": "^0.10.0"
+    "vite-aliases": "^0.10.0",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-mock": "^2.9.6"
   }
 }
