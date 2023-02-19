@@ -1,1 +1,1 @@
-import sylasPic from '../../../assets/images/2.webp'
+import sylasPic from '@assets/images/2.webp'

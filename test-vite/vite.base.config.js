@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import { ViteAliases } from "./node_modules/vite-aliases";
+import _myViteAliases from './plugins/viteAliases';
 import path from "path";
 // const postcssPresetEnv = require('postcss-preset-env')
 export default defineConfig({
@@ -42,6 +43,7 @@ export default defineConfig({
     emptyOutDir: true, //打包清除输出目录,重新构建, 默认true
   },
   plugins: [
-    ViteAliases(),
+    _myViteAliases(),
+    // ViteAliases(),
   ],
 });

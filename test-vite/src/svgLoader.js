@@ -1,6 +1,6 @@
-import svgIcon from './assets/svg/哺乳动物.svg'
+import svgIcon from '@assets/svg/哺乳动物.svg'
 
-import svgRaw from './assets/svg/哺乳动物.svg?raw'
+import svgRaw from '@assets/svg/哺乳动物.svg?raw'
 console.log(svgRaw)
 document.body.innerHTML = svgRaw
 const svgEle = document.getElementsByTagName('svg')[0]

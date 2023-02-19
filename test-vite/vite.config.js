@@ -14,12 +14,11 @@ const envResolver = {
     }
 }
 export default defineConfig(({command, mode}) => {
-    let a
     // command 的参数是build还是serve取决于我们的命令是开发环境还是生产环境
-    console.log("process", process.env)
+    // console.log("process", process.env)
     // 当前env文件所在位置
     // 第二个参数不是必须用process.cwd,如果使用process.cwd，必须保证vite.config.js的目录在项目根目录
     const env = loadEnv(mode, process.cwd(), '')
-    console.log('env', env)
+    // console.log('env', env)
     return envResolver[command]()
 })
