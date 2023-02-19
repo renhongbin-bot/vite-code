@@ -14,6 +14,7 @@ const envResolver = {
     }
 }
 export default defineConfig(({command, mode}) => {
+    let a
     // command 的参数是build还是serve取决于我们的命令是开发环境还是生产环境
     console.log("process", process.env)
     // 当前env文件所在位置
