@@ -1,8 +1,9 @@
 import { defineConfig } from "vite";
-import { ViteAliases } from "./node_modules/vite-aliases";
+// import { ViteAliases } from "./node_modules/vite-aliases";
 import viteCompression from 'vite-plugin-compression'
 import _myViteAliases from './plugins/viteAliases';
-import { viteMockServe } from 'vite-plugin-mock'
+// import { viteMockServe } from 'vite-plugin-mock'
+import VitePluginMock from "./plugins/VitePluginMock";
 import path from "path";
 // const postcssPresetEnv = require('postcss-preset-env')
 export default defineConfig({
@@ -46,7 +47,8 @@ export default defineConfig({
   plugins: [
     _myViteAliases(),
     viteCompression(),
-    viteMockServe()
+    VitePluginMock()
+    // viteMockServe()
     // ViteAliases(),
   ],
 });
