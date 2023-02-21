@@ -1,0 +1,8 @@
+// 配置ts检查规则
+
+{
+  "compilerOptions": {
+    "skipLibCheck": true, //是否跳过node_modules目录检查
+    "module": "ESNext"
+  }
+}
