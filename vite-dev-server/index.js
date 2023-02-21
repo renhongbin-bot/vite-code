@@ -3,6 +3,13 @@ const fs = require('fs')
 const path = require('path')
 
 const viteConfig = require('./vite.config')
+
+// process process.cwd process.env
+viteConfig.plugins.forEach(plugin => plugin.config && plugin.config(viteConfig))
+
+const mergeOptions = Object.assign({}, defaultConfig, viteConfig, terminalConf)
+
+viteConfig.plugins.forEach(plugin => plugin.config && plugin.configResolved(mergeOptions))
 const aliasResolver = require('./aliasResolver')
 console.log(viteConfig)
 
@@ -12,6 +19,12 @@ app.use(async (ctx)=> { //context 上下文 request 请求信息 response 响应
   console.log('ctx', ctx.request, ctx.response)
   if(ctx.request.url === '/') {
     const indexContent = await fs.promises.readFile(path.resolve(__dirname, './index.html')) //在服务端不会这么用
+    let cacheIndexHtml = indexContent
+    viteConfig.plugins.forEach(plugin => {
+      if(plugin.transfromIndexHtml) {
+        cacheIndexHtml = plugin.transfromIndexHtml(cacheIndexHtml)
+      }
+    })
     ctx.response.body = indexContent;
     ctx.response.set("Content-Type", "text/html")
   }

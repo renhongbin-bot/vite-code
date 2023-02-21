@@ -2,10 +2,10 @@ import { defineConfig } from "vite";
 // import { ViteAliases } from "./node_modules/vite-aliases";
 import viteCompression from 'vite-plugin-compression'
 import _myViteAliases from './plugins/viteAliases';
-// import { viteMockServe } from 'vite-plugin-mock'
+import CreateHtmlPlugin from "./plugins/CreateHtmlPlugin";
 import VitePluginMock from "./plugins/VitePluginMock";
+// import { createHtmlPlugin } from 'vite-plugin-html'
 import path from "path";
-// const postcssPresetEnv = require('postcss-preset-env')
 export default defineConfig({
   optimizeDeps: {
     exclude: [],
@@ -47,7 +47,23 @@ export default defineConfig({
   plugins: [
     _myViteAliases(),
     viteCompression(),
-    VitePluginMock()
+    VitePluginMock(),
+    CreateHtmlPlugin(
+      {
+        inject: {
+          data: {
+            title: '首页'
+          }
+        }
+      }
+    )
+    // createHtmlPlugin({
+    //   inject: {
+    //     data: {
+    //       title: '首页'
+    //     }
+    //   }
+    // })
     // viteMockServe()
     // ViteAliases(),
   ],
