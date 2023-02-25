@@ -3,6 +3,9 @@
 {
   "compilerOptions": {
     "skipLibCheck": true, //是否跳过node_modules目录检查
-    "module": "ESNext"
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "lib": ["ES2017", "DOM"],
+    "allowSyntheticDefaultImports": true
   }
 }
