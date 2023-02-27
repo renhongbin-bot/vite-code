@@ -1,4 +1,6 @@
-import '@/imageLoader'
+import('@/imageLoader').then(data => {
+  console.log(data)
+})
 import '@/svgLoader'
 import { name, age } from '@assets/json/index.json'
 // 企业项目：如果生产环境非常臃肿和性能差
